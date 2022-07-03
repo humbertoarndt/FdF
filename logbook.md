@@ -49,7 +49,7 @@ cc *file_name.c* -Lminilibx_linux -lmlx_Linux -L/usr/lib -Iminilibx_linux -lXext
 
 `-L`*dir* While compiling *source_file.c* searches for header files in the specified directory.
 
-`-l`*library* Adds the indicated library to the list of libraries to be linked. [Read more about **UNIX**](https://www.computerhope.com/unix/ucc.htm/)
+`-l`*library* Adds the indicated library to the list of libraries to be linked. [Read more about **Compiler Options**](https://docs.oracle.com/cd/E19957-01/806-3567/cc_options.html)
 
 `-lXext` The X Extensions library provides mechanisms that were not provided in the core protocol in Xlib. [Read more about **Xext**](http://osr507doc.sco.com/en/man/html.Xext/Intro.Xext.html/)
 
