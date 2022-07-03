@@ -49,14 +49,8 @@ cc *file_name.c* -Lminilibx_linux -lmlx_Linux -L/usr/lib -Iminilibx_linux -lXext
 
 `-L`*dir* While compiling *source_file.c* searches for header files in the specified directory.
 
-`-l`*library* Adds the indicated library to the list of libraries to be linked.
+`-l`*library* Adds the indicated library to the list of libraries to be linked. [Read more about **unix**](https://www.computerhope.com/unix/ucc.htm/)
 
-`-lXext` The X Extensions library provides mechanisms that were not provided in the core protocol in Xlib.
+`-lXext` The X Extensions library provides mechanisms that were not provided in the core protocol in Xlib. [Read more about **Xext**](http://osr507doc.sco.com/en/man/html.Xext/Intro.Xext.html/)
 
-`-lX11` Allow VNC connections to real X11 displays
-
-[Read more about **unix**](https://www.computerhope.com/unix/ucc.htm/)
-
-[Read more about **Xext**](http://osr507doc.sco.com/en/man/html.Xext/Intro.Xext.html/)
-
-[Read more about **X11** ](https://www.manpagez.com/man/3/X11::Protocol::Ext::XFIXES/)
+`-lX11` Allow VNC connections to real X11 displays [Read more about **X11** ](https://www.manpagez.com/man/3/X11::Protocol::Ext::XFIXES/)
