@@ -3,9 +3,9 @@ I'll register everything learned through the project. I'll try very hard to upda
 
 # Week #01
 ## What is this project about?
-The PDF starts with a lesson history about (*Ghosts'n Goblins*)[https://en.wikipedia.org/wiki/Ghosts_%27n_Goblins_(video_game)/], a major commercial success across arcades and home systems side-scrolling platform game relesed for arcades in 1985. The game is often considered very difficult by arcade standards and is commonly regarded as **one of the most difficult games ever released.**
+The PDF starts with a lesson history about [*Ghosts'n Goblins*](https://en.wikipedia.org/wiki/Ghosts_%27n_Goblins_(video_game)), a major commercial success across arcades and home systems side-scrolling platform game relesed for arcades in 1985. The game is often considered very difficult by arcade standards and is commonly regarded as **one of the most difficult games ever released.**
 
-The FdF project is about creating a simple wireframe model representation of a 3D landscape. I mentioned the project with friends, and seems the project is similar to (Point Cloud)[https://en.wikipedia.org/wiki/Point_cloud/].
+The FdF project is about creating a simple wireframe model representation of a 3D landscape. I mentioned the project with friends, and seems the project is similar to [Point Cloud](https://en.wikipedia.org/wiki/Point_cloud/).
 
 A point cloud is essensually the simplest form of a 3D  model. It is a collection of individual points plotted in 3D space. Each point contains several measurements including its cordinates along the X, Y and Z axis, and sometimes additonal data as color value, which is stored in RGB format and luminance value which determines how bright the point is.
 
@@ -16,7 +16,7 @@ This will be my first **graphic** project, so I need to familiarize with the **M
 ## VNC
 Since the project requires an interface I discovered that I need to use a VNC in order to make it works. So what is a VNC?
 
-VNC stands for Virtual Network Computing. It is a cross-platform screen sharing system that was created to remotely control another computer using (Remote Frame Buffer protocol)[https://en.wikipedia.org/wiki/RFB_protocol/]. It transmits the keyboard and mouse input from one computer to another, relaying the graphical-screen updates, over network.
+VNC stands for Virtual Network Computing. It is a cross-platform screen sharing system that was created to remotely control another computer using [Remote Frame Buffer protocol](https://en.wikipedia.org/wiki/RFB_protocol/). It transmits the keyboard and mouse input from one computer to another, relaying the graphical-screen updates, over network.
 
 [Read more](http://www.remoteaccess.org/what-is-a-vnc/)
 
