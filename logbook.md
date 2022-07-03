@@ -55,6 +55,6 @@ cc *file_name.c* -Lminilibx_linux -lmlx_Linux -L/usr/lib -Iminilibx_linux -lXext
 
 `-lX11` Allow VNC connections to real X11 displays [Read more about **X11** ](https://www.manpagez.com/man/3/X11::Protocol::Ext::XFIXES/)
 
-`-lm` To `#include <>` Still looking for to know what it is.
+`-lm` To `#include <math.h>` [Read more about **math**](https://linux.die.net/man/3/math/)
 
 `-lz` To `#include <zlib.h>` [Read more about **zlib**](https://linux.die.net/man/3/zlib/)
