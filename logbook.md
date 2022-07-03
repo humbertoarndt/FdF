@@ -14,9 +14,9 @@ FdF is short for *Fil der Fer* meaning in frech *Wireframe Model*.
 This will be my first **graphic** project, so I need to familiarize with the **MiniLibX**, an internally library that includes the basic to create interface and deal with keyboard and mouse events.
 
 ## VNC
-Since the project requires an interface I discovered that I need to use a VNC in order to make it works. So what is a VNC?
+Since the project requires an interface I discovered that I need to use a VNC in order to make it work. So what is a VNC?
 
-VNC stands for Virtual Network Computing. It is a cross-platform screen sharing system that was created to remotely control another computer using [Remote Frame Buffer protocol](https://en.wikipedia.org/wiki/RFB_protocol/). It transmits the keyboard and mouse input from one computer to another, relaying the graphical-screen updates, over network.
+VNC stands for Virtual Network Computing. It is a cross-platform screen sharing system that was created to remotely control another computer using [Remote Frame Buffer protocol](https://en.wikipedia.org/wiki/RFB_protocol/). It transmits the keyboard and mouse input from one computer to another, replaying the graphical-screen updates, over network.
 
 [Read more](http://www.remoteaccess.org/what-is-a-vnc/)
 
@@ -33,7 +33,7 @@ The first thing to do is clone or download the MiniLibX repository into the root
 git clone https://github.com/42Paris/minilibx-linux
 ```
 
-As the **README.md** says to make it work i just need to execute the `configure` script.
+As the **README.md** says to make it work I just need to execute the `configure` script.
 
 ```
 bash configure
@@ -42,5 +42,14 @@ bash configure
 To compile the files I want some flags are needed.
 
 ```
--Lminilibx_linux -lmlx_Linux -L/usr/lib -Iminilibx_linux -lXext -lX11 -lm -lz
+cc *file_name.c* -Lminilibx_linux -lmlx_Linux -L/usr/lib -Iminilibx_linux -lXext -lX11 -lm -lz
 ```
+
+`-I*dir*` Search *dir* for included files whose names do not begin with `/` before searching the usual directories.
+`-L*dir*` While compiling *source_file.c* searches for header files in the specified directory.
+`-l*library*` Adds the indicated library to the list of libraries to be linked.
+`-lXext` The X Extensions library provides mechanisms that were not provided in the core protocol in Xlib.
+`-lX11` Allow VNC connections to real X11 displays
+[Read more about **unix**](https://www.computerhope.com/unix/ucc.htm/)
+[Read more about **Xext**](http://osr507doc.sco.com/en/man/html.Xext/Intro.Xext.html/)
+[Read more about **X11** ](https://www.manpagez.com/man/3/X11::Protocol::Ext::XFIXES/)
