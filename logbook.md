@@ -58,3 +58,60 @@ cc *file_name.c* -Lminilibx_linux -lmlx_Linux -L/usr/lib -Iminilibx_linux -lXext
 `-lm` To `#include <math.h>` [Read more about **math**](https://linux.die.net/man/3/math/)
 
 `-lz` To `#include <zlib.h>` [Read more about **zlib**](https://linux.die.net/man/3/zlib/)
+
+# Week #02
+Talking with veterans at 42SP I discovered that, for now, I can compile my tests using just 
+
+```
+cc my_file.c -lmlx lXext -lX11
+```
+
+I did some tests, and since the enviroment already is able to use minilibx I don't really know if I need to put it in my project.
+
+# Makefile
+The minimium part of any project they say, well this time is kind hard.
+
+**IT JUST WORK AND I CAN'T REMEMBER WHAT I DID.**
+
+Besides the usual flags `-Wall -Werror -Wextra` I need to add the `-O3` flag, looked a bit for what it does and is for compile optimzation.
+
+[Read more compiler comands](https://caiorss.github.io/C-Cpp-Notes/compiler-flags-options.html)
+
+# Time to learn how to use MiniLibX
+## Creating a window
+In order to start having some fun I create two files `fdf.h` to be used as the header for the project and a `test.c` where my code will be for now.
+
+Before I can do anything I must include the `<mlx.h>` library in my header to access all the MiniLibX functions.
+
+```c
+#include <mlx.h>
+```
+
+`mlx_init()` is the first function I'll use. It will stablish a connection between the program I am creating and the display. No parameters are needed, and it will return an address `void*` useful to further call in the MiniLibX.
+
+```c
+#include <mlx.h>
+
+int	main(void)
+{
+	void	*mlx;
+
+	mlx = mlx_init();
+}
+```
+
+The only thing done was to initiate the `mlx` so no window pops up yet. To make it happens a window must be initialized and I'll do that using the `mlx_new_window()` function, which will also returns a pointer `void*` to the window created. This function receive the pointer to mlx, values to width and height, and a title. Then I'll call `mlx_loop()` function so my window can stays opened until I interrupt the process (`Ctrl+C`).
+
+```c
+#include <mlx.h>
+
+int	main(void)
+{
+	void	*mlx;
+	void	*mlx_win;
+
+	mlx = mlx_init();
+	mlx_win = mlx_new_window(mlx, 600, 300, "My first window");
+	mlx_loop(mlx);
+}
+```
