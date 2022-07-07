@@ -29,7 +29,7 @@ I will use the Linux distribution since this is the enviroment provided by [42SP
 
 The first thing to do is clone or download the MiniLibX repository into the root of my project.
 
-```
+```c
 git clone https://github.com/42Paris/minilibx-linux
 ```
 
@@ -41,7 +41,7 @@ bash configure
 
 To compile the files I want some flags are needed.
 
-```
+```c
 cc *file_name.c* -Lminilibx_linux -lmlx_Linux -L/usr/lib -Iminilibx_linux -lXext -lX11 -lm -lz
 ```
 
@@ -62,7 +62,7 @@ cc *file_name.c* -Lminilibx_linux -lmlx_Linux -L/usr/lib -Iminilibx_linux -lXext
 # Week #02
 Talking with veterans at 42SP I discovered that, for now, I can compile my tests using just 
 
-```
+```c
 cc my_file.c -lmlx lXext -lX11
 ```
 
