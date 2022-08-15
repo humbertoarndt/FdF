@@ -33,7 +33,7 @@ Wich render in Fdf:
 
 ### Drawing a line
 
-At 42SP we are forced to do everything from the scratch. In this case it meant that we weren't given any line drawing function so we had to figure ourselves how to color pixels between line endpoints with help of [miniLibX library](https://qst0.github.io/ft_libgfx/man_mlx.html
+At 42SP we are forced to do everything from the scratch. In this case it meant that we weren't given any line drawing function so we had to figure ourselves how to color pixels between line endpoints with help of [miniLibX library](https://github.com/42Paris/minilibx-linuxl
 ). I used [Bresenham's line algorithm](https://en.wikipedia.org/wiki/Bresenham%27s_line_algorithm) for drawing a line which was the most obvious choice.
 
 ### Projections
@@ -54,5 +54,4 @@ I have the following controls to help user to view different maps:
 • Change color mode:: 'C' key  
 • Reset map values: 'D' key  
 
-Using graphic library: miniLibX  
-https://qst0.github.io/ft_libgfx/man_mlx.html
+Using graphic library: [miniLibX](https://github.com/42Paris/minilibx-linuxl)
