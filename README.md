@@ -2,7 +2,7 @@
 ![preview_gif](/images/preview_fdf.gif)  
 *Visualizing "t1.fdf" in 3D.*  
 
-(/images/s_fdf.png)(/images/fdf.png)  
+![score](/images/s_fdf.png)![badge](/images/fdf.png)  
 
 ## About
 Fdf (in franch *'fil de fer'*, meaning 'wireframe model') is about representing a landscape as a 3D object in which all surfaces are outlined in lines. The coordinates of this landscape are stored in a file passe as a parameter to your program. Here is an example:
