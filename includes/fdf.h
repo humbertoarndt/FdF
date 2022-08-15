@@ -6,7 +6,7 @@
 /*   By: harndt <harndt@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/21 02:20:12 by harndt            #+#    #+#             */
-/*   Updated: 2022/08/04 22:43:52 by harndt           ###   ########.fr       */
+/*   Updated: 2022/08/12 21:30:01 by harndt           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,7 @@
 // =============================================================================
 # define W_WIDTH	1260
 # define W_HEIGHT	600
-# define L_WIDTH	280
-# define L_HEIGHT	210
+# define L_WIDTH	190
 # define W_NAME		"FDF - harndt"
 # define ISO		1
 # define DIMETRIC	2
@@ -124,7 +123,7 @@ typedef struct s_win
 	void	*win_ptr;
 	t_img	img;
 	t_img	legend;
-	t_fdf	fdf;
+	t_fdf	*fdf;
 }	t_win;
 
 // =============================================================================
@@ -168,7 +167,8 @@ int		get_height(char *path);
  * @param path The path to the file to read.
  * @return int The width from the file, split columns by ' '.
  */
-int		get_width(char *path);
+// static int	get_width(t_fdf *fdf, char **values, int n_row);
+// int		get_width(char *path);
 
 /**
  * @brief This function reads the file the gets its content.
@@ -292,14 +292,6 @@ void	rotate(t_fdf *fdf);
 int		press_mouse(int button, int x, int y, t_win *data);
 
 /**
- * @brief Closes the app and frees memory.
- * 
- * @param data The window to close.
- * @return int 0
- */
-int		close_app(t_win *data);
-
-/**
  * @brief Render the background image with a color.
  * 
  * @param img The image to  render.
@@ -317,6 +309,19 @@ void	render_background(t_img *img, int color);
  */
 void	img_pix_put(t_img *img, int x, int y, int color);
 
-void	end_program(t_win *data);
+/**
+ * @brief End the program by destroing and freeing every memory allocated.
+ * 
+ * @param data The struct to free.
+ * @return int 
+ */
+int		end_program(t_win *data);
 
+/**
+ * @brief This function projects the fdf on the screen after moving
+ * or rotating.
+ * 
+ * @param data The struct to project.
+ */
+void	reproject(t_win *data);
 #endif

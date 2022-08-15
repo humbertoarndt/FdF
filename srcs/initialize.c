@@ -6,7 +6,7 @@
 /*   By: harndt <harndt@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/21 02:42:49 by harndt            #+#    #+#             */
-/*   Updated: 2022/08/05 01:58:11 by harndt           ###   ########.fr       */
+/*   Updated: 2022/08/15 22:53:49 by harndt           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static t_fdf	*init_fdf(char *path)
 	fdf->points = NULL;
 	fdf->controls = init_controls();
 	fdf->height = get_height(path);
-	fdf->width = get_width(path);
+	fdf->width = 0;
 	fdf->delta_x = 0;
 	fdf->delta_y = 0;
 	fdf->slope_x = 0;
@@ -48,7 +48,7 @@ void	init_mlx(t_win	*data, char *path)
 	data->img.mlx_img = mlx_new_image(data->mlx_ptr, W_WIDTH, W_HEIGHT);
 	data->img.addr = mlx_get_data_addr(data->img.mlx_img, &data->img.bpp, \
 										&data->img.line_len, &data->img.endian);
-	data->fdf = *init_fdf(path);
+	data->fdf = init_fdf(path);
 }
 
 t_ctrls	*init_controls(void)

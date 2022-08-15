@@ -6,43 +6,51 @@
 /*   By: harndt <harndt@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 19:24:15 by harndt            #+#    #+#             */
-/*   Updated: 2022/08/05 01:02:09 by harndt           ###   ########.fr       */
+/*   Updated: 2022/08/09 23:27:54 by harndt           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
+
+/**
+ * @brief Set the color 2 object
+ * 
+ * @param z 
+ * @return int 
+ */
+static int	set_color_2(int z)
+{
+	if (z >= 8 || z <= -8)
+		if (z >= 8)
+			return (C_NIER_WHITE);
+	else
+		return (C_BLU);
+	else if (z >= 4 || z <= -4)
+		if (z >= 4)
+			return (C_NIER_YELLOW);
+	else
+		return (C_ORG);
+	else if (z >= 2 || z <= -2)
+		if (z >= 2)
+			return (C_NIER_BEIGE);
+	else
+		return (C_NIER_BROWN);
+	else if (z > 0 || z < 0)
+		if (z >= 0)
+			return (C_NIER_TXT);
+	else
+		return (C_NIER_BROWN);
+	else
+		return (C_NIER_BROWN);
+}
 
 int	set_color(t_fdf *fdf, int z)
 {
 	if (!fdf->controls->color)
 		return (C_NIER_TXT);
 	else
-	{
-		if (z >= 8 || z <= -8)
-			if (z >= 8)
-				return (C_NIER_WHITE);
-		else
-			return (C_BLU);
-		else if (z >= 4 || z <= -4)
-			if (z >= 4)
-				return (C_NIER_YELLOW);
-		else
-			return (C_ORG);
-		else if (z >= 2 || z <= -2)
-			if (z >= 2)
-				return (C_NIER_BEIGE);
-		else
-			return (C_NIER_BROWN);
-		else if (z > 0 || z < 0)
-			if (z >= 0)
-				return (C_NIER_TXT);
-		else
-			return (C_NIER_BROWN);
-		else
-			return (C_NIER_BROWN);
-	}
+		return (set_color_2(z));
 }
-
 
 /**
  * @brief Get the light color.
@@ -54,7 +62,10 @@ int	set_color(t_fdf *fdf, int z)
  */
 static int	get_light(int start, int end, double percentage)
 {
-	return ((int)(1 - percentage) * start + percentage * end);
+	int	ret;
+
+	ret = (int)(1 - percentage);
+	return (ret * start + percentage * end);
 }
 
 /**

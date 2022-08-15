@@ -6,7 +6,7 @@
 /*   By: harndt <harndt@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/04 02:16:43 by harndt            #+#    #+#             */
-/*   Updated: 2022/08/05 02:05:31 by harndt           ###   ########.fr       */
+/*   Updated: 2022/08/09 22:55:04 by harndt           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	img_pix_put(t_img *img, int x, int y, int color)
 
 	i = img->bpp - 8;
 	pixel = img->addr + (y * img->line_len + x * (img->bpp / 8));
-	if (x < W_WIDTH && x >= 0 && y <= W_HEIGHT && y >= 0)
+	if (x < W_WIDTH - L_WIDTH && x >= 0 && y <= W_HEIGHT && y >= 0)
 	{
 		while (i >= 0)
 		{

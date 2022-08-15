@@ -6,20 +6,20 @@
 #    By: harndt <harndt@student.42sp.org.br>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/05 23:10:48 by harndt            #+#    #+#              #
-#    Updated: 2022/08/05 02:20:10 by harndt           ###   ########.fr        #
+#    Updated: 2022/08/12 23:47:48 by harndt           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		:=	fdf
 CC			:=	cc
 LINKS		:=	-lmlx -lm -lz -Llibft -lXext -lX11
-CFLAGS		:=	-O3 -g -Wall -Werror -Wextra
+CFLAGS		:=	-O3 -g3 -Wall -Werror -Wextra
 HEADERS		:=	includes
 LIBFT		:=	./libft/libft.a
 SRCS		:=	fdf.c	./srcs/initialize.c	./srcs/free.c	./srcs/read.c	\
-				./srcs/legend.c	./srcs/key_hooks.c	./srcs/color.c	./srcs/draw.c	\
-				./srcs/projection.c	./srcs/rotate.c ./srcs/mouse_hooks.c	\
-				./srcs/image.c
+				./srcs/legend.c	./srcs/key_hooks.c	./srcs/color.c			\
+				./srcs/draw.c	./srcs/projection.c	./srcs/rotate.c 		\
+				./srcs/mouse_hooks.c	./srcs/image.c	./srcs/reproject.c
 
 OBJS		:=	$(SRCS:.c=.o)
 
@@ -39,7 +39,7 @@ $(NAME):	$(OBJS) $(LIBFT)
 			@echo "$(GREEN)FDF build completed.$(EOC)"
 
 $(LIBFT):
-			@echo "$(WHT)Compiling lbft...$(EOC)"
+			@echo "$(WHT)Compiling libft...$(EOC)"
 			@make -C libft
 			@echo "$(GREEN)Libft done.$(EOC)"
 
@@ -57,12 +57,12 @@ fclean:		clean
 
 re:			fclean all
 
-leak:
+valgrind:
 			@echo "$(WHT)Removing old log.$(EOC)"
 			@rm -f valgrind-out.txt
 			@echo "$(WHT)Old log removed.$(EOC)"
 			@echo "$(WHT)Executing Valgrind.$(EOC)"
-			@valgrind --leak-check=full --show-leak-kinds=reachable --track-origins=yes --main-stacksize=8388608000 \
+			@valgrind --leak-check=full --show-leak-kinds=reachable --track-origins=yes \
 			--log-file=valgrind-out.txt \
 			./$(NAME) 42.fdf
 			@echo "$(GREEN)Valgrind-log created.$(EOC)"

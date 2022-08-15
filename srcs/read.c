@@ -6,11 +6,25 @@
 /*   By: harndt <harndt@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/21 03:26:21 by harndt            #+#    #+#             */
-/*   Updated: 2022/08/05 01:55:34 by harndt           ###   ########.fr       */
+/*   Updated: 2022/08/11 01:06:42 by harndt           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
+
+static int	get_width(t_fdf *fdf, char **values, int n_row)
+{
+	int	x;
+
+	x = 0;
+	while (values[x])
+		x++;
+	if (x == 0 || (n_row > 0 && x != fdf->width))
+		print_error(MAP_ERROR);
+	if (x > fdf->width)
+		fdf->width = x;
+	return (x);
+}
 
 /**
  * @brief Stores the values read from a pathfile in a ***array.
@@ -25,7 +39,7 @@ static void	store_values(char **values, t_fdf *fdf, int y)
 	int	width;
 
 	x = 0;
-	width = fdf->width;
+	width = get_width(fdf, values, y);
 	fdf->points[y] = (t_points **)malloc(sizeof(t_points *) * (width + 1));
 	if (!fdf->points[y])
 		print_error(MLC_ERROR);
@@ -100,37 +114,14 @@ int	get_height(char *path)
 	fd = open(path, O_RDONLY);
 	if (fd == -1)
 		print_error(OPN_ERROR);
-	while ((row = ft_get_next_line(fd)) != NULL)
+	while (1)
 	{
+		row = ft_get_next_line(fd);
+		if (!row)
+			break ;
 		height++;
 		free(row);
 	}
 	close(fd);
 	return (height);
-}
-
-int	get_width(char *path)
-{
-	int		i;
-	int		fd;
-	int		width;
-	char	*row;
-
-	width = 1;
-	i = 0;
-	fd = open(path, O_RDONLY);
-	if (fd == -1)
-		print_error(OPN_ERROR);
-	row = ft_get_next_line(fd);
-	if (!row)
-		print_error(GNL_ERROR);
-	while (row[i])
-	{
-		if (row[i] == ' ' && row[i -1] != ' ')
-			width++;
-		i++;
-	}
-	free(row);
-	close(fd);
-	return (width);
 }

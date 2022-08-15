@@ -6,7 +6,7 @@
 /*   By: harndt <harndt@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/04 21:42:28 by harndt            #+#    #+#             */
-/*   Updated: 2022/08/04 19:44:22 by harndt           ###   ########.fr       */
+/*   Updated: 2022/08/09 22:55:52 by harndt           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -523,6 +523,6 @@ void		ft_putstr(char *str);
  * @param x The value to compute.
  * @return int The abosulute value of the integer argument.
  */
-int	ft_abs(int x);
+int			ft_abs(int x);
 
 #endif
