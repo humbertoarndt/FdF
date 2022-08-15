@@ -51,7 +51,7 @@ I have the following controls to help user to view different maps:
 • Change projections: 1 = ISO 2 = DIMETRIC 3 = CONIC  
 • Zooming in and out: Mouse sroll  
 • Moving the map on the screen: Right click  
-• Change color mode:: 'C' key  
+• Change color mode: 'C' key  
 • Reset map values: 'D' key  
 
 Using graphic library: [miniLibX](https://github.com/42Paris/minilibx-linuxl)
